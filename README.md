@@ -131,6 +131,18 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Setting Up Snapping**](#setting-up-snapping)
     - [**Duplicating Walls**](#duplicating-walls)
     - [**Organizing Walls**](#organizing-walls)
+  - [**SETTING UP FIRST PLAYER VIEW**](#setting-up-first-player-view)
+    - [**Save Project**](#save-project)
+    - [**Restore Single Viewport**](#restore-single-viewport)
+    - [**Adding Player Start**](#adding-player-start)
+    - [**Testing Play Mode**](#testing-play-mode)
+    - [**Modifying First Person Character**](#modifying-first-person-character)
+    - [**Issues to Fix:**](#issues-to-fix)
+    - [**Steps:**](#steps)
+    - [**Removing Hand:**](#removing-hand)
+    - [**Changing Walk Speed:**](#changing-walk-speed)
+    - [**Adjusting Camera Height:**](#adjusting-camera-height)
+    - [**Finalizing:**](#finalizing)
 
 ---
 
@@ -296,35 +308,35 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ---
 
-**SETTING UP FIRST PLAYER VIEW**
+## **SETTING UP FIRST PLAYER VIEW**
 
-**Save Project**
+### **Save Project**
 - Click Save icon (remove asterisk from title)
 
-**Restore Single Viewport**
+### **Restore Single Viewport**
 - In perspective view, click "Restore Viewport" (top right)
 
-**Adding Player Start**
+### **Adding Player Start**
 - Click **Add** menu at top
 - Go to **Basic** submenu
 - Find **Player Start**
 - Drag and drop near wall
 - Small capsule appears - automatically pins to floor
 
-**Testing Play Mode**
+### **Testing Play Mode**
 - Click **Play** button
 - Click viewport to activate
 - Use W, A, S, D to move
 - Press **Escape** to exit play mode
 
-**Modifying First Person Character**
+### **Modifying First Person Character**
 
-**Issues to Fix:**
+### **Issues to Fix:**
 - Remove crash test dummy hand from view
 - Slow down movement speed
 - Adjust camera height
 
-**Steps:**
+### **Steps:**
 - Press Ctrl+Space for content browser
 - Go to top level Content
 - Search for "first"
@@ -332,26 +344,30 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Double-click to open
 - Drag to top of screen if opens in separate window
 
-**Removing Hand:**
+![alt text](image-4.png)
+
+### **Removing Hand:**
 - Click **Viewport** tab at top
 - Select "FirstPersonMesh" (highlights hands)
 - In Details panel, search for "hidden"
 - Check **Hidden in Game**
 
-**Changing Walk Speed:**
+### **Changing Walk Speed:**
 - Select "Character Movement" component
 - In Details, find "Character Movement: Walking"
 - Change **Max Walk Speed** from 600 to **200** centimeters/second
 
-**Adjusting Camera Height:**
+### **Adjusting Camera Height:**
 - Select Camera
 - Change Z location from 60 to **120** centimeters
 - Or drag camera up with blue arrow
 
-**Finalizing:**
+### **Finalizing:**
 - Click **Compile** and **Save**
 - Close first person character
 - Test in Play mode
+
+![alt text](image-5.png)
 
 ---
 
