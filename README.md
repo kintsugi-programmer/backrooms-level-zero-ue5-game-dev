@@ -1,99 +1,31 @@
 # backrooms-level-zero-ue5-game-dev
 
-## **Project Description – Backrooms Level Zero (Unreal Engine 5)**
-
 **Backrooms Level Zero** is a short, atmospheric first-person exploration experience built in **Unreal Engine 5**, inspired by the iconic liminal space known as *The Backrooms*. The project focuses on environmental storytelling, mood, and immersion rather than traditional gameplay mechanics, recreating the unsettling feeling of endless, monotonous corridors.
 
----
+- ✓ 40x40 meter room with 4-meter walls
+- ✓ First person character with adjusted speed and camera
+- ✓ Internal maze walls with baseboards
+- ✓ Yellow materials on floor, walls, ceiling
+- ✓ Grid texture on ceiling
+- ✓ Noise texture on carpet
+- ✓ Wallpaper on internal walls
+- ✓ 49 ceiling lights in grid pattern
+- ✓ Proper exposure settings
+- ✓ Post-processing effects (bloom, chromatic aberration, dirt mask, film grain)
+- ✓ Camera shake for movement
+- ✓ VHS static ambient sound
+- ✓ Trigger sound near graffiti
+- ✓ Graffiti decal on wall
+- ✓ Quit function (Q or Escape)
+- ✓ Accurate Universal Fisheye Lens
+- ✓ Packaged for Windows distribution
 
-### **Core Concept**
-
-The player is placed inside a vast, enclosed maze of yellow wallpapered rooms with humming fluorescent lights, worn carpet, and subtle environmental details. There are no objectives, enemies, or HUD elements—only the act of wandering, listening, and absorbing the oppressive atmosphere. The experience is designed to evoke unease through repetition, isolation, and sensory distortion.
-
----
-
-### **Key Features**
-
-#### **Environment & Level Design**
-
-* 40×40 meter playable space with 4-meter-high walls
-* Maze-like internal layout using modular wall segments
-* Exterior boundary walls to fully enclose the level
-* Ceiling grid with evenly spaced fluorescent light fixtures
-* Minimalistic geometry to emphasize liminal emptiness
-
-#### **Materials & Visual Style**
-
-* Custom murky yellow wall material inspired by Level Zero
-* Procedural carpet material using noise textures
-* Wallpaper material with subtle pattern variation
-* Ceiling tile material with grid scaling
-* Matte surfaces to avoid unrealistic shine
-
-#### **Lighting & Atmosphere**
-
-* Emissive ceiling light panels for fluorescent lighting
-* Manual exposure control using a global Post Process Volume
-* Carefully tuned brightness for a gloomy, washed-out look
-* No natural light sources (no sun/sky lighting)
-
-#### **Post-Processing Effects**
-
-* Subtle bloom for light bleed
-* Chromatic aberration for old-camera lens distortion
-* Film grain for analog/VHS-style noise
-* Dirt mask for lens grime and age
-* Fixed exposure to prevent brightness shifting
-
-#### **Player Experience**
-
-* First-person movement with reduced walking speed
-* Adjusted camera height for realistic perspective
-* Continuous procedural camera shake to simulate nervous motion
-* No visible player body or hands for immersion
-
-#### **Audio Design**
-
-* Constant looping VHS static ambient sound
-* Positional eerie sound triggered near graffiti
-* Audio spatialization for environmental depth
-
-#### **Environmental Storytelling**
-
-* Single graffiti decal to break repetition
-* Sound trigger linked to visual landmark
-* Encourages exploration and curiosity without guidance
-
----
-
-### **Technical Highlights**
-
-* Built using Unreal Engine 5 First Person template
-* Modular assets created with UE5 Modeling Tools
-* Clean project organization (Levels, Materials, Sounds, Megascans, Generated assets)
-* Optimized for Windows PC distribution
-* Shipping build configuration for performance and smaller size
-
----
-
-### **Controls**
-
-* **WASD** – Move
-* **Mouse** – Look around
-* **Q / Escape** – Quit game
-* **F11** – Fullscreen (during play)
-
----
-
-### **Target Audience**
-
-* Fans of liminal spaces and Backrooms lore
-* Indie horror and atmospheric exploration enthusiasts
-* Developers learning environment design, lighting, and post-processing in UE5
-
----
-
-**Backrooms Level Zero** demonstrates how minimal gameplay elements, when combined with strong lighting, sound design, and post-processing, can create a deeply unsettling and memorable experience.
+**All assets organized in folders:**
+- Levels
+- Materials
+- Sounds
+- Generated (modeling assets)
+- Megascans (textures and decals)
 
 ---
 
@@ -101,7 +33,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ## Table of Contents
 - [backrooms-level-zero-ue5-game-dev](#backrooms-level-zero-ue5-game-dev)
-  - [**Project Description – Backrooms Level Zero (Unreal Engine 5)**](#project-description--backrooms-level-zero-unreal-engine-5)
+- [Development Documentation](#development-documentation)
+  - [Table of Contents](#table-of-contents)
+  - [Game Design](#game-design)
     - [**Core Concept**](#core-concept)
     - [**Key Features**](#key-features)
       - [**Environment \& Level Design**](#environment--level-design)
@@ -114,8 +48,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Technical Highlights**](#technical-highlights)
     - [**Controls**](#controls)
     - [**Target Audience**](#target-audience)
-- [Development Documentation](#development-documentation)
-  - [Table of Contents](#table-of-contents)
+  - [Game Development](#game-development)
   - [**PROJECT SETUP**](#project-setup)
     - [**Creating New Project**](#creating-new-project)
     - [**Creating New Level**](#creating-new-level)
@@ -210,8 +143,185 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Applying to Floor:**](#applying-to-floor-1)
     - [**Adjusting Tile Density:**](#adjusting-tile-density)
     - [**Adding Yellow Color:**](#adding-yellow-color)
+  - [**ADDING WALLPAPER TEXTURE**](#adding-wallpaper-texture)
+    - [**Getting Wallpaper from Quixel Bridge**](#getting-wallpaper-from-quixel-bridge)
+    - [**Finding Texture:**](#finding-texture)
+    - [**Creating Wallpaper Material:**](#creating-wallpaper-material)
+    - [**Setting Up Material:**](#setting-up-material)
+    - [**Applying to Walls:**](#applying-to-walls)
+    - [**Testing Basic Application:**](#testing-basic-application)
+    - [**Adjusting Scale:**](#adjusting-scale)
+    - [**Converting to Yellow:**](#converting-to-yellow)
+    - [**Color Blending:**](#color-blending)
+    - [**Using Linear Interpolate (Lerp):**](#using-linear-interpolate-lerp)
+    - [**Result:**](#result)
+  - [**ADDING POST-PROCESSING EFFECTS**](#adding-post-processing-effects)
+    - [**Using Post Process Volume:**](#using-post-process-volume)
+    - [**Adjusting Bloom:**](#adjusting-bloom)
+    - [**Chromatic Aberration:**](#chromatic-aberration)
+    - [**Lens Dirt Mask:**](#lens-dirt-mask)
+    - [**Film Grain:**](#film-grain)
+  - [**ADDING CAMERA SHAKE**](#adding-camera-shake)
+    - [**Purpose:**](#purpose)
+    - [**Creating Camera Shake Blueprint**](#creating-camera-shake-blueprint)
+    - [**Steps:**](#steps-1)
+    - [**Configuring Camera Shake:**](#configuring-camera-shake)
+    - [**Setting Duration:**](#setting-duration)
+    - [**Setting Rotation Parameters:**](#setting-rotation-parameters)
+    - [**Saving:**](#saving)
+    - [**Applying to First Person Camera**](#applying-to-first-person-camera)
+    - [**Steps:**](#steps-2)
+    - [**Adding Shake Component:**](#adding-shake-component)
+    - [**Configuring Shake Source:**](#configuring-shake-source)
+    - [**Testing:**](#testing-2)
+  - [**ADDING GRAFFITI DECAL**](#adding-graffiti-decal)
+    - [**Purpose:**](#purpose-1)
+    - [**Getting Graffiti from Quixel Bridge**](#getting-graffiti-from-quixel-bridge)
+    - [**Finding Decal:**](#finding-decal)
+    - [**Downloading:**](#downloading)
+    - [**Applying Graffiti**](#applying-graffiti)
+    - [**Dragging Decal:**](#dragging-decal)
+    - [**Rotating Decal:**](#rotating-decal)
+    - [**Scaling Decal:**](#scaling-decal)
+    - [**Positioning:**](#positioning)
+    - [**Modifying Decal Appearance**](#modifying-decal-appearance)
+    - [**Adjusting Opacity:**](#adjusting-opacity)
+    - [**Changing Settings:**](#changing-settings)
+  - [**ADDING AUDIO**](#adding-audio)
+    - [**Two Audio Components Needed:**](#two-audio-components-needed)
+    - [**Preparing Sound Files**](#preparing-sound-files)
+    - [**File Requirements:**](#file-requirements)
+    - [**Importing Sounds:**](#importing-sounds)
+    - [**Previewing Sounds:**](#previewing-sounds)
+    - [**Setting Up Looping:**](#setting-up-looping)
+    - [**Adding VHS Static Sound to Player**](#adding-vhs-static-sound-to-player)
+    - [**Steps:**](#steps-3)
+    - [**Adding Audio Component:**](#adding-audio-component)
+    - [**Configuring Audio:**](#configuring-audio)
+    - [**Testing:**](#testing-3)
+    - [**Creating Trigger Box for Eerie Sound**](#creating-trigger-box-for-eerie-sound)
+    - [**Creating Blueprint:**](#creating-blueprint)
+    - [**Adding Box Collision:**](#adding-box-collision)
+    - [**Adding Audio Component:**](#adding-audio-component-1)
+    - [**Setting Sound:**](#setting-sound)
+    - [**Setting Up Trigger Logic:**](#setting-up-trigger-logic)
+    - [**Connecting Audio:**](#connecting-audio)
+    - [**Result:**](#result-1)
+    - [**Placing Trigger in Level**](#placing-trigger-in-level)
+    - [**Steps:**](#steps-4)
+    - [**Positioning Trigger:**](#positioning-trigger)
+    - [**Scaling Trigger:**](#scaling-trigger)
+    - [**Testing:**](#testing-4)
+    - [**Full Screen Mode:**](#full-screen-mode)
+  - [**FISHEYE EFFECT**](#fisheye-effect)
+    - [**Initial Setup**](#initial-setup)
+    - [**Creating the Material**](#creating-the-material)
+    - [**Configuring Material Domain**](#configuring-material-domain)
+    - [**Building the Material Graph**](#building-the-material-graph)
+    - [**Creating Material Instance**](#creating-material-instance)
+    - [**Implementing in Scene**](#implementing-in-scene)
+    - [**Testing and Customization**](#testing-and-customization)
+    - [**Gameplay Testing**](#gameplay-testing)
+  - [**PACKAGING THE GAME**](#packaging-the-game)
 
 ---
+
+## Game Design
+
+---
+
+### **Core Concept**
+
+The player is placed inside a vast, enclosed maze of yellow wallpapered rooms with humming fluorescent lights, worn carpet, and subtle environmental details. There are no objectives, enemies, or HUD elements—only the act of wandering, listening, and absorbing the oppressive atmosphere. The experience is designed to evoke unease through repetition, isolation, and sensory distortion.
+
+---
+
+### **Key Features**
+
+#### **Environment & Level Design**
+
+* 40×40 meter playable space with 4-meter-high walls
+* Maze-like internal layout using modular wall segments
+* Exterior boundary walls to fully enclose the level
+* Ceiling grid with evenly spaced fluorescent light fixtures
+* Minimalistic geometry to emphasize liminal emptiness
+
+#### **Materials & Visual Style**
+
+* Custom murky yellow wall material inspired by Level Zero
+* Procedural carpet material using noise textures
+* Wallpaper material with subtle pattern variation
+* Ceiling tile material with grid scaling
+* Matte surfaces to avoid unrealistic shine
+
+#### **Lighting & Atmosphere**
+
+* Emissive ceiling light panels for fluorescent lighting
+* Manual exposure control using a global Post Process Volume
+* Carefully tuned brightness for a gloomy, washed-out look
+* No natural light sources (no sun/sky lighting)
+
+#### **Post-Processing Effects**
+
+* Subtle bloom for light bleed
+* Chromatic aberration for old-camera lens distortion
+* Film grain for analog/VHS-style noise
+* Dirt mask for lens grime and age
+* Fixed exposure to prevent brightness shifting
+
+#### **Player Experience**
+
+* First-person movement with reduced walking speed
+* Adjusted camera height for realistic perspective
+* Continuous procedural camera shake to simulate nervous motion
+* No visible player body or hands for immersion
+
+#### **Audio Design**
+
+* Constant looping VHS static ambient sound
+* Positional eerie sound triggered near graffiti
+* Audio spatialization for environmental depth
+
+#### **Environmental Storytelling**
+
+* Single graffiti decal to break repetition
+* Sound trigger linked to visual landmark
+* Encourages exploration and curiosity without guidance
+
+---
+
+### **Technical Highlights**
+
+* Built using Unreal Engine 5 First Person template
+* Modular assets created with UE5 Modeling Tools
+* Clean project organization (Levels, Materials, Sounds, Megascans, Generated assets)
+* Optimized for Windows PC distribution
+* Shipping build configuration for performance and smaller size
+
+---
+
+### **Controls**
+
+* **WASD** – Move
+* **Mouse** – Look around
+* **Q / Escape** – Quit game
+* **F11** – Fullscreen (during play)
+
+---
+
+### **Target Audience**
+
+* Fans of liminal spaces and Backrooms lore
+* Indie horror and atmospheric exploration enthusiasts
+* Developers learning environment design, lighting, and post-processing in UE5
+
+---
+
+**Backrooms Level Zero** demonstrates how minimal gameplay elements, when combined with strong lighting, sound design, and post-processing, can create a deeply unsettling and memorable experience.
+
+---
+
+## Game Development
 
 ## **PROJECT SETUP**
 
@@ -259,7 +369,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Name level: "BackroomsLevel0" (no spaces allowed)
 - Click Save
 
-![alt text](image.png)
+![alt text](ScreenShots/image.png)
 
 ---
 
@@ -335,7 +445,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Find wall, press F2, rename to "OutsideWall"
 - Press Ctrl+Space again to close content browser
 
-![alt text](image-1.png)
+![alt text](ScreenShots/image-1.png)
 
 ### **Creating Remaining Three Walls**
 - Exit Modeling mode: Click Select at top
@@ -355,7 +465,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Select first wall
 - Hold **Alt** key + drag wall to opposite side (creates duplicate)
 
-![alt text](image-2.png)
+![alt text](ScreenShots/image-2.png)
 
 - Duplicate again into middle of room
 - Press **E** key to rotate (changes to rotation tool)
@@ -371,7 +481,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Name folder: "OutsideWalls"
 - Collapse folder
 
-![alt text](image-3.png)
+![alt text](ScreenShots/image-3.png)
 
 ---
 
@@ -411,7 +521,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Double-click to open
 - Drag to top of screen if opens in separate window
 
-![alt text](image-4.png)
+![alt text](ScreenShots/image-4.png)
 
 ### **Removing Hand:**
 - Click **Viewport** tab at top
@@ -434,7 +544,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Close first person character
 - Test in Play mode
 
-![alt text](image-5.png)
+![alt text](ScreenShots/image-5.png)
 
 ---
 
@@ -545,9 +655,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Navigate through maze
 - Press Escape to exit
 
-![alt text](image-7.png)
+![alt text](ScreenShots/image-7.png)
 
-![alt text](image-6.png)
+![alt text](ScreenShots/image-6.png)
 
 ---
 
@@ -587,7 +697,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Preview now shows matte yellow finish
 - Click **Save**
 
-![alt text](image-8.png)
+![alt text](ScreenShots/image-8.png)
 
 ### **Applying to Floor:**
 - Collapse folders in outliner
@@ -616,13 +726,13 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Everything now murky yellow
 - Press Escape to exit
 
-![alt text](image-9.png)
+![alt text](ScreenShots/image-9.png)
 
 ---
 
 ## **CREATING CEILING AND LIGHTING**
 
-![alt text](image-10.png)
+![alt text](ScreenShots/image-10.png)
 
 ### **Creating Ceiling**
 
@@ -640,7 +750,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - In outliner, select "Floor2"
 - Press F2, rename to "Ceiling"
 
-![alt text](image-11.png)
+![alt text](ScreenShots/image-11.png)
 
 ### **Removing External Lighting:**
 - In outliner, open Lighting folder
@@ -668,7 +778,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Preview shows glowing yellow sphere
 - Click **Save**
 
-![alt text](image-12.png)
+![alt text](ScreenShots/image-12.png)
 
 ### **Applying Ceiling Material:**
 - Go back to main level
@@ -677,7 +787,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Change from M_BackroomYellow to **M_BackroomCeiling**
 - Ceiling glows and casts light on walls
 
-![alt text](image-13.png)
+![alt text](ScreenShots/image-13.png)
 
 ### **Setting Up Exposure Control**
 
@@ -694,7 +804,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - This applies settings to entire room
 - Press **X** to clear search and see all details
 
-![alt text](image-14.png)
+![alt text](ScreenShots/image-14.png)
 
 ### **Setting Manual Exposure:**
 - Find **Exposure** section
@@ -705,13 +815,13 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Creates consistent, gloomy lighting
 - No auto-adjustment when entering play mode
 
-![alt text](image-16.png)
+![alt text](ScreenShots/image-16.png)
 
-![alt text](image-15.png)
+![alt text](ScreenShots/image-15.png)
 
 ### **Adding Grid Texture to Ceiling**
 
-![alt text](image-17.png)
+![alt text](ScreenShots/image-17.png)
 
 ### **Using Quixel Bridge:**
 - Go to Add menu → **Quixel Bridge**
@@ -766,13 +876,13 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Creates darker, tinted grid
 - Save
 
-![alt text](image-19.png)
+![alt text](ScreenShots/image-19.png)
 
 ### **Adjusting Exposure:**
 - Lighting may be too dark now
 - Will adjust after adding ceiling lights
 
-![alt text](image-18.png)
+![alt text](ScreenShots/image-18.png)
 
 ---
 
@@ -824,7 +934,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Press F2
 - Rename: "CeilingLight"
 
-![alt text](image-20.png)
+![alt text](ScreenShots/image-20.png)
 
 ### **Distributing Lights**
 
@@ -871,7 +981,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Try **12.5** or **13**
 - Adjust as needed for desired look
 
-![alt text](image-21.png)
+![alt text](ScreenShots/image-21.png)
 
 ---
 
@@ -887,7 +997,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Double-click to open
 - Drag to top of screen
 
-![alt text](image-22.png)
+![alt text](ScreenShots/image-22.png)
 
 ### **Current State:**
 - Has solid murky yellow color
@@ -915,7 +1025,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Change from M_BackroomYellow to **M_BackroomCarpet**
 - Floor shows black/white noise
 
-![alt text](image-23.png)
+![alt text](ScreenShots/image-23.png)
 
 ### **Adjusting Tile Density:**
 - Press **G** to toggle grid/game view
@@ -936,19 +1046,19 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Save
 - Carpet now has roughness but still yellow
 
-![alt text](image-24.png)
+![alt text](ScreenShots/image-24.png)
 
-![alt text](image-25.png)
+![alt text](ScreenShots/image-25.png)
 
-![alt text](image-26.png)
+![alt text](ScreenShots/image-26.png)
 
 ---
 
-**ADDING WALLPAPER TEXTURE**
+## **ADDING WALLPAPER TEXTURE**
 
-**Getting Wallpaper from Quixel Bridge**
+### **Getting Wallpaper from Quixel Bridge**
 
-**Finding Texture:**
+### **Finding Texture:**
 - Go to Add → **Quixel Bridge**
 - Search for: "old decorative wallpaper"
 - Find "Old Decorative Wallpaper" texture
@@ -958,7 +1068,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Creates new folder in project
 - Texture available in Megascan surfaces
 
-**Creating Wallpaper Material:**
+### **Creating Wallpaper Material:**
 - Close Bridge
 - In Materials folder
 - Select "M_BackroomYellow"
@@ -966,13 +1076,13 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Rename: "M_BackroomWallpaper"
 - Open material
 
-**Setting Up Material:**
+### **Setting Up Material:**
 - Open content browser (Ctrl+Space)
 - Navigate to wallpaper texture folder
 - Drag texture ending in "_D" into material
 - Can close content browser
 
-**Applying to Walls:**
+### **Applying to Walls:**
 - Drag material editor to side to see level
 - Open InternalWalls folder
 - Select first wall
@@ -981,14 +1091,14 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Element 0 (main wall): Change to M_BackroomWallpaper
 - Element 1 (baseboard): Leave as M_BackroomYellow
 
-**Testing Basic Application:**
+### **Testing Basic Application:**
 - Save project
 - In material, take texture RGB
 - Plug into Base Color
 - Save
 - Walls show wallpaper pattern
 
-**Adjusting Scale:**
+### **Adjusting Scale:**
 - Pattern too large
 - Click empty space
 - Press **U** + left-click (Texture Coordinate)
@@ -999,19 +1109,19 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Change to **10**
 - Save - better scale
 
-**Converting to Yellow:**
+### **Converting to Yellow:**
 - Currently white/red/yellow pattern
 - Want yellow only
 - Take one channel from texture (example: **Red**)
 - This gives black/white values (0 to 1)
 
-**Color Blending:**
+### **Color Blending:**
 - Duplicate yellow color (Ctrl+D)
 - Double-click second yellow
 - Change Value from 0.05 to **0.02** (darker yellow)
 - Now have light yellow (0.05) and dark yellow (0.02)
 
-**Using Linear Interpolate (Lerp):**
+### **Using Linear Interpolate (Lerp):**
 - Drag from dark yellow color
 - Type "lerp" or "linear interpolate"
 - Creates Lerp node
@@ -1021,22 +1131,28 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Connect Lerp output to Base Color
 - Save
 
-**Result:**
+### **Result:**
 - Wallpaper pattern visible
 - Blends between dark and light yellow
 - Black areas = darker yellow
 - White areas = lighter yellow
 
+![alt text](ScreenShots/image-27.png)
+
+![alt text](ScreenShots/image-28.png)
+
+- did some tweaks with ceiling 
+
 ---
 
-**ADDING POST-PROCESSING EFFECTS**
+## **ADDING POST-PROCESSING EFFECTS**
 
-**Using Post Process Volume:**
+### **Using Post Process Volume:**
 - Select Post Process Volume in outliner
 - Already created for exposure control
 - Has many sections for different effects
 
-**Adjusting Bloom:**
+### **Adjusting Bloom:**
 - Find **Bloom** section
 - Controls light "bleeding" effect
 - Current intensity creates bloom around lights
@@ -1044,7 +1160,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Or set to **0.2** for slight bloom
 - Adds to old camera effect
 
-**Chromatic Aberration:**
+![alt text](ScreenShots/image-29.png)
+
+### **Chromatic Aberration:**
 - Camera lens effect
 - Separates RGB components like a prism
 - Find **Chromatic Aberration** section
@@ -1052,7 +1170,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Reduce to **2** - still too much
 - Set to **1** - subtle old lens effect
 
-**Lens Dirt Mask:**
+![alt text](ScreenShots/image-30.png)
+
+### **Lens Dirt Mask:**
 - Adds dirt/water marks on lens
 - Find **Dirt Mask** section
 - Click **Dirt Mask Texture** dropdown
@@ -1064,7 +1184,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Final setting: **2**
 - Shows dirt especially near lights
 
-**Film Grain:**
+![alt text](ScreenShots/image-31.png)
+
+### **Film Grain:**
 - Adds static/grain like old film
 - Find **Film Grain** section (just over halfway down)
 - Set **Intensity** to 10 - looks like TV static
@@ -1076,18 +1198,20 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Can adjust these values later
 - Creates authentic VHS/old camera look
 
+![alt text](ScreenShots/image-32.png)
+
 ---
 
-**ADDING CAMERA SHAKE**
+## **ADDING CAMERA SHAKE**
 
-**Purpose:**
+### **Purpose:**
 - Add random gentle motion when standing still
 - Simulates slight looking around
 - Adds nervousness to scene
 
-**Creating Camera Shake Blueprint**
+### **Creating Camera Shake Blueprint**
 
-**Steps:**
+### **Steps:**
 - Press Ctrl+Space for content browser
 - Go to top level
 - Right-click → Create Blueprint Class
@@ -1096,17 +1220,21 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Select **MatineeCameraShake**
 - Name: "BackroomCameraShake"
 
-**Configuring Camera Shake:**
+![alt text](ScreenShots/image-33.png)
+
+![alt text](ScreenShots/image-34.png)
+
+### **Configuring Camera Shake:**
 - Double-click to open
 - Place at top of screen
 - Focus on Details panel on right
 
-**Setting Duration:**
+### **Setting Duration:**
 - Find **Duration** setting
 - Currently 0 (no shake)
-- Enter **9999999** (maximum value for continuous shake)
+- Enter **99999999999999999999999999999** (maximum value for continuous shake)
 
-**Setting Rotation Parameters:**
+### **Setting Rotation Parameters:**
 - Not interested in **Location** (don't want camera moving around)
 - Focus on **Rotation** section:
   - **Pitch** (up and down):
@@ -1122,13 +1250,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - **Roll** (side to side):
     - Leave at 0 (looks drunk if enabled)
 
-**Saving:**
+![alt text](ScreenShots/image-35.png)
+
+### **Saving:**
 - Click **Compile**
 - Click **Save**
 
-**Applying to First Person Camera**
+### **Applying to First Person Camera**
 
-**Steps:**
+### **Steps:**
 - Go back to content browser (top level)
 - Search for "first"
 - Find "BP_FirstPersonCharacter"
@@ -1136,20 +1266,28 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Go to **Viewport** tab
 - Select **Camera** component
 
-**Adding Shake Component:**
+![alt text](ScreenShots/image-36.png)
+
+![alt text](ScreenShots/image-37.png)
+
+### **Adding Shake Component:**
 - At top, click **Add**
 - Type "shake"
 - Select **Camera Shake Source** component
 - Added under First Person Camera in hierarchy
 
-**Configuring Shake Source:**
+![alt text](ScreenShots/image-38.png)
+
+### **Configuring Shake Source:**
 - Select Camera Shake Source
 - In Details on right:
   - **Camera Shake** dropdown: Select "BackroomCameraShake"
   - Check **Auto Start** (already checked by default)
   - This starts shake when level loads
 
-**Testing:**
+![alt text](ScreenShots/image-39.png)
+
+### **Testing:**
 - Click **Compile**
 - Click **Save**
 - Leave blueprint open
@@ -1158,18 +1296,23 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Even when standing still
 - Press Escape to exit
 
+![alt text](ScreenShots/image-40.png)
+
+- Me Rn
+  - ![alt text](ScreenShots/image-41.png)
+
 ---
 
-**ADDING GRAFFITI DECAL**
+## **ADDING GRAFFITI DECAL**
 
-**Purpose:**
+### **Purpose:**
 - Break up monotony of walls
 - Add point of interest
 - Keep room mostly repetitive but with one feature
 
-**Getting Graffiti from Quixel Bridge**
+### **Getting Graffiti from Quixel Bridge**
 
-**Finding Decal:**
+### **Finding Decal:**
 - Go to Add menu → **Quixel Bridge**
 - Section called **Decals**
 - Contains blood splatters, graffiti, etc.
@@ -1178,7 +1321,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Example: "Who Is Here" graffiti tag
 - Select any graffiti you prefer
 
-**Downloading:**
+### **Downloading:**
 - Select graffiti
 - Choose **Medium** quality
 - Click **Download**
@@ -1186,9 +1329,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Creates folder: "MegaScans_Decals" subfolder
 - Close Bridge
 
-**Applying Graffiti**
+### **Applying Graffiti**
 
-**Dragging Decal:**
+### **Dragging Decal:**
 - Navigate viewport to desired wall
 - Example: End wall
 - From content browser, drag **Material Instance** (graffiti)
@@ -1196,7 +1339,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Will appear in wrong orientation (don't worry)
 - Close content browser
 
-**Rotating Decal:**
+![alt text](ScreenShots/image-42.png)
+
+### **Rotating Decal:**
 - Decals project onto surfaces from just in front
 - Press **E** for rotation tool
 - Try different axes:
@@ -1206,25 +1351,29 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Rotate 90 degrees until correct orientation
 - If upside down, rotate again
 
-**Scaling Decal:**
+![alt text](ScreenShots/image-43.png)
+
+### **Scaling Decal:**
 - Press **R** for scale tool
 - With middle handle selected, drag in/out
 - Scale down to fit on wall
 
-**Positioning:**
+### **Positioning:**
 - Press **W** for move tool
 - Move to desired position on wall
 
-**Modifying Decal Appearance**
+![alt text](ScreenShots/image-44.png)
 
-**Adjusting Opacity:**
+### **Modifying Decal Appearance**
+
+### **Adjusting Opacity:**
 - Save project
 - Select graffiti in outliner
 - In Details, find **Decal Material**
 - Click arrow to browse to it
 - Double-click to open material instance
 
-**Changing Settings:**
+### **Changing Settings:**
 - Various settings available:
   - Metallic
   - Roughness
@@ -1238,22 +1387,34 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Save and close
 - Graffiti now appears painted on wall with yellow showing through
 
+![alt text](ScreenShots/image-45.png)
+
+![alt text](ScreenShots/image-46.png)
+
+![alt text](ScreenShots/image-47.png)
+
+![alt text](ScreenShots/image-48.png)
+
+![alt text](ScreenShots/image-49.png)
+
 ---
 
-**ADDING AUDIO**
+## **ADDING AUDIO**
 
-**Two Audio Components Needed:**
+### **Two Audio Components Needed:**
 1. VHS static sound - plays throughout level
 2. Eerie cool sound - triggers near graffiti
 
-**Preparing Sound Files**
+![alt text](ScreenShots/image-50.png)
 
-**File Requirements:**
+### **Preparing Sound Files**
+
+### **File Requirements:**
 - Proper format needed (example: 16-bit WAV file)
 - Can find on freesound.org or create own
 - Tutorial provides two edited sounds via Google Drive link (see description)
 
-**Importing Sounds:**
+### **Importing Sounds:**
 - Press Ctrl+Space for content browser
 - Go to top level
 - Right-click → Create New Folder: "Sounds"
@@ -1263,20 +1424,22 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Drag into Sounds folder in Unreal
 - Imports both files
 
-**Previewing Sounds:**
+### **Previewing Sounds:**
 - Click sound file to play preview
 - VHS static sound: Long looping sound
 - Eerie sound: Distant atmospheric sound
 
-**Setting Up Looping:**
+### **Setting Up Looping:**
 - Double-click "VHS_Static" sound
 - Check **Looping** flag is ON
 - Ensures sound continues throughout game
 - Close sound editor
 
-**Adding VHS Static Sound to Player**
+![alt text](ScreenShots/image-51.png)
 
-**Steps:**
+### **Adding VHS Static Sound to Player**
+
+### **Steps:**
 - Press Ctrl+Space for content browser
 - Go to top level
 - Search for "first"
@@ -1284,14 +1447,14 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Open it
 - Go to **Viewport** tab
 
-**Adding Audio Component:**
+### **Adding Audio Component:**
 - At top left, click **Add**
 - Type "audio"
 - Select **Audio** component
 - Added under First Person Camera hierarchy
 - Rename to "VHS_Audio" (optional)
 
-**Configuring Audio:**
+### **Configuring Audio:**
 - Select VHS_Audio component
 - In Details on right:
   - **Sound** dropdown: Type "vhs"
@@ -1301,7 +1464,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Means sound starts when level loads
   - Combined with looping flag, plays continuously
 
-**Testing:**
+### **Testing:**
 - Click **Compile**
 - Click **Save**
 - Keep blueprint open
@@ -1309,9 +1472,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - VHS static sound plays immediately
 - Press Escape to exit
 
-**Creating Trigger Box for Eerie Sound**
+### **Creating Trigger Box for Eerie Sound**
 
-**Creating Blueprint:**
+### **Creating Blueprint:**
 - Press Ctrl+Space for content browser
 - Make sure in Sounds folder
 - Clear any search filters
@@ -1321,19 +1484,21 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Double-click to open
 - Drag to top of screen
 
-**Adding Box Collision:**
+### **Adding Box Collision:**
 - Click **Add** (top left)
 - Search for "box"
 - Select **Box Collision**
 - Box appears - this triggers the sound
 
-**Adding Audio Component:**
+### **Adding Audio Component:**
 - Click **Add** again
 - Type "audio"
 - Select **Audio** component
 - Appears in hierarchy
 
-**Setting Sound:**
+![alt text](ScreenShots/image-52.png)
+
+### **Setting Sound:**
 - Select Audio component
 - In Details → Sound dropdown
 - Search for "eerie"
@@ -1341,27 +1506,29 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Check **Auto Activate** is **UNCHECKED**
 - Want sound to trigger only when entering box, not at level start
 
-**Setting Up Trigger Logic:**
+### **Setting Up Trigger Logic:**
 - Select Box Collision component
 - In Details, find **Events** section
 - Double-click **Event Begin Overlap**
 - Creates event node in Event Graph
 - This fires when another actor (player) enters box
 
-**Connecting Audio:**
+### **Connecting Audio:**
 - Drag from Event Begin Overlap output
 - Type "play audio"
 - Select "Play (Audio)" - recognizes Audio component
 - Automatically connects to Audio component in blueprint
 
-**Result:**
+![alt text](ScreenShots/image-53.png)
+
+### **Result:**
 - When player enters box, sound plays
 - Click **Compile**
 - Click **Save**
 
-**Placing Trigger in Level**
+### **Placing Trigger in Level**
 
-**Steps:**
+### **Steps:**
 - Navigate to graffiti location in viewport
 - From content browser, drag BP_SoundTrigger into scene
 - Drop near graffiti wall
@@ -1369,19 +1536,21 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Press **G** to toggle game view on/off
   - Shows editor elements including trigger box
 
-**Positioning Trigger:**
+### **Positioning Trigger:**
 - Set position snapping to 50 or lower for fine control
 - Press **W** for move tool
 - Move box in front of graffiti
 - Box might be too small initially
 
-**Scaling Trigger:**
+### **Scaling Trigger:**
 - Press **R** for scale tool
 - Scale up to **3x** size
 - Creates larger trigger area in corner
 - When player enters this area, eerie sound plays
 
-**Testing:**
+![alt text](ScreenShots/image-54.png)
+
+### **Testing:**
 - Save project
 - Click **Play**
 - VHS static plays immediately
@@ -1391,15 +1560,208 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Return to corner - sound plays again
 - Press Escape to exit
 
-**Full Screen Mode:**
+### **Full Screen Mode:**
 - In play mode, select viewport
 - Press **F11** for full screen
 - See level in full glory
 - Press F11 again to exit full screen
 
+![alt text](ScreenShots/image-55.png)
+
+## **FISHEYE EFFECT**
+
+### **Initial Setup**
+
+### **Creating the Material**
+
+- Press **Control + Space** to open the content browser
+- Navigate to your desired folder location
+- Right-click and select **Create a Material**
+- Name the material: **PP_fisheye** (PP stands for post-process)
+- Open the newly created material
+
+### **Configuring Material Domain**
+
+- In the left panel, locate **Material Domain** settings
+- Change the domain from **Surface** to **Post Process**
+- This conversion leaves only the **Emissive Color** output
+- This configuration ensures the material functions as a post-process material
+
+### **Building the Material Graph**
+
+**Step 1: Screen Position Setup**
+
+- Navigate to an empty space on the left side of the graph
+- Right-click and add a **Screen Position** node
+- This node provides viewport UV coordinates through its output
+
+**Step 2: Component Mask Configuration**
+
+- Add a **Component Mask** node
+- Connect the Screen Position output to the Component Mask input
+- In the Component Mask settings, ensure only **R (Red)** and **G (Green)** channels are ticked
+- This isolates the necessary UV components
+
+**Step 3: Addition Node Setup**
+
+- Create an **Add** (Addition) node
+- Connect the Component Mask output to input **A** of the Add node
+- For input **B**, create a constant value:
+  - Hold **1** key and left-click to create a **Constant** node
+  - Set the constant value to **-0.5**
+  - Connect this to input **B** of the Add node
+- This operation centers the screen position
+- Select this node group and press **C** to create a comment box
+- Name the comment: **Screen Position Center**
+
+**Step 4: Radial Gradient Configuration**
+
+- From the Add node output, connect to a **Radial Gradient Exponential** node
+- Create another constant value (hold **1** and left-click)
+- Set this constant to **0** (zero)
+- Connect it to the **Center Position V2** input
+
+**Step 5: Radius Parameter**
+
+- Hold **S** and left-click to create a **Scalar Parameter**
+- Name this parameter: **Area Radius**
+- Set default value to **1**
+- Connect to the **Radius** input of the Radial Gradient Exponential node
+
+**Step 6: Density Parameter**
+
+- Hold **S** and left-click to create another **Scalar Parameter**
+- Name this parameter: **Area Fall Off**
+- Set default value to **1**
+- Connect to the **Density** input of the Radial Gradient Exponential node
+- Apply these changes
+
+**Step 7: Invert Switch Setup**
+
+- From the Radial Gradient Exponential output, add a **1 Minus** (One Minus X) node
+- Right-click and search for **Switch Parameter**
+- Name this parameter: **Invert**
+- Connect the **1 Minus** output to the **True** input
+- Connect the **Radial Gradient Exponential** output directly to the **False** input
+- This creates an invertible radial falloff effect
+- Select this section and press **C** to comment
+- This represents the radial falloff from the screen center
+
+**Step 8: First Multiplication**
+
+- Move the nodes to the left for better organization
+- From the Invert output, create a **Multiply** node (hold **M** and left-click)
+- Connect the **Invert** output to input **B**
+- Connect the **Addition** node (screen center position) to input **A**
+- This multiplies the screen center position by the radial falloff
+
+**Step 9: Intensity Parameter and Second Multiplication**
+
+- Create another **Multiply** node (hold **M** and left-click)
+- Connect the previous Multiply output to input **B**
+- For input **A**, create a **Scalar Parameter** (hold **S** and left-click)
+- Name this parameter: **Intensity**
+- Set default value to **0.5**
+- Connect to input **A** of the second Multiply node
+
+**Step 10: Subtraction Setup**
+
+- Add a **Subtract** node
+- Connect the second Multiply output to input **B** of the Subtract node
+- Connect the **Component Mask** output (from the Screen Position section) to input **A**
+- This subtracts the multiplication result from the original screen position
+- Double-click to create routing nodes for clean organization
+
+**Step 11: Final Scene Texture Connection**
+
+- From the Subtract output, add a **Scene Texture** node
+- Set the **Scene Texture ID** to **Post Process Input 0**
+- This ensures the material recognizes itself as a post-process effect
+- Connect the **Color** output to the **Emissive Color** pin on the main material node
+- Click **Apply** and **Save**
+
+### **Creating Material Instance**
+
+**Instance Setup**
+
+- In the content browser, right-click on the fisheye material
+- Select **Create Material Instance**
+- Open the material instance
+
+**Available Parameters**
+
+The material instance provides adjustable parameters:
+
+- **Invert**: Toggles the direction of the post-process effect
+- **Intensity**: Controls the strength of the fisheye distortion
+- **Area Radius**: Adjusts the size of the affected area
+- **Area Fall Off**: Controls how gradually the effect fades
+
+All values can be modified in real-time for customization
+
+### **Implementing in Scene**
+
+**Post Process Volume Setup**
+
+- Search for **Post Process Volume** in the scene
+- If not present, click **Quick Add** button and search for **Post Process Volume**
+- Add the Post Process Volume to the scene
+- Select the Post Process Volume
+
+**Volume Configuration**
+
+- Enable **Infinite Extent** (or **Unbound**) option
+- This applies the effect to the entire map, not just within the volume bounds
+
+**Adding the Material**
+
+- In the Post Process Volume settings, search for **Materials**
+- Expand **Post Process Materials**
+- Click **Add Array Element** (the plus icon)
+- Choose **Asset Reference**
+- Select **PP_fisheye** (the material instance version)
+
+### **Testing and Customization**
+
+**In-Editor Preview**
+
+The fisheye lens effect is now visible in the viewport and can be adjusted through the Post Process Volume settings.
+
+**Parameter Adjustment Examples**
+
+- **Invert**: Changes the curvature direction of the distortion
+- **Intensity**: Increases or decreases distortion strength
+- **Radius**: Expands or contracts the affected area
+- **Fall Off**: Softens or sharpens the transition
+
+### **Gameplay Testing**
+
+When hitting play, the body cam system displays the fisheye lens effect, creating a more realistic body camera appearance. The effect enhances visual authenticity for body cam perspectives.
+
+**Use Cases**
+
+- Body camera systems
+- Security camera footage
+- Wide-angle camera effects
+- Any scenario requiring lens distortion effects
+- Custom camera perspectives
+
+**Key Advantages**
+
+- Fully customizable parameters
+- Real-time adjustable values through material instance
+- Works with any camera or viewport
+- Non-destructive post-process implementation
+- Performance-efficient material setup
+
+![alt text](ScreenShots/image-56.png)
+![alt text](ScreenShots/image-58.png)
+![alt text](ScreenShots/image-59.png)
+![alt text](ScreenShots/image-57.png)
+
 ---
 
-**PACKAGING THE GAME**
+## **PACKAGING THE GAME**
 
 **Adding Quit Function**
 
@@ -1422,6 +1784,8 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Press **Escape** key
 - Now Quit Game action responds to Q or Escape
 
+![alt text](ScreenShots/image-60.png)
+
 **Setting Default Levels:**
 - Still in Project Settings
 - Go to **Maps & Modes** at top
@@ -1429,6 +1793,8 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - **Editor Startup Map**: Select "BackroomsLevelZero"
   - **Game Default Map**: Select "BackroomsLevelZero"
 - This ensures correct level opens in editor and built game
+
+![alt text](ScreenShots/image-61.png)
 
 **Adding Quit Logic:**
 - Press Ctrl+Space for content browser
@@ -1454,6 +1820,8 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Close blueprint
 - Now Q or Escape will quit game (no need for Alt+F4 or Task Manager)
 
+![alt text](ScreenShots/image-62.png)
+
 **Building for Windows**
 
 **Prerequisites:**
@@ -1463,7 +1831,10 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 **Installing SDK (if needed):**
 1. Download and copy specific file (see Unreal documentation link)
-2. Install .NET Core Runtime
+   1. https://forums.unrealengine.com/t/are-you-unable-to-package-windows-projects-in-ue5-fear-not-i-have-a-solution-for-you/231593  
+   2. "C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\ThirdParty\DotNet\8.0.412\win-x64\host\fxr\8.0.18\hostfxr.dll"
+   3. to "C:\Program Files\Epic Games\UE_5.7\Engine\Binaries\DotNET\AutomationTool\"
+2. Install .NET Core Runtime https://download.visualstudio.microsoft.com/download/pr/d30352fe-d4f3-4203-91b9-01a3b66a802e/bb416e6573fa278fec92113abefc58b3/windowsdesktop-runtime-3.1.15-win-x64.exe
 3. Restart PC completely after installation
 
 **Verification:**
@@ -1481,6 +1852,8 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Optimized performance
   - No debug features
 
+![alt text](ScreenShots/image-63.png)
+
 **Setting Output Folder:**
 - Click **Package Project**
 - Select output folder location
@@ -1488,6 +1861,8 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Create new folder: "Build"
 - Select "Build" folder
 - Click "Select Folder"
+
+![alt text](ScreenShots/image-64.png)
 
 **Build Process:**
 - Shows "Packaging Project for Windows" message
@@ -1585,31 +1960,3 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ---
 
-**FINAL CHECKLIST**
-
-**Project Complete When You Have:**
-- ✓ 40x40 meter room with 4-meter walls
-- ✓ First person character with adjusted speed and camera
-- ✓ Internal maze walls with baseboards
-- ✓ Yellow materials on floor, walls, ceiling
-- ✓ Grid texture on ceiling
-- ✓ Noise texture on carpet
-- ✓ Wallpaper on internal walls
-- ✓ 49 ceiling lights in grid pattern
-- ✓ Proper exposure settings
-- ✓ Post-processing effects (bloom, chromatic aberration, dirt mask, film grain)
-- ✓ Camera shake for movement
-- ✓ VHS static ambient sound
-- ✓ Trigger sound near graffiti
-- ✓ Graffiti decal on wall
-- ✓ Quit function (Q or Escape)
-- ✓ Packaged for Windows distribution
-
-**All assets organized in folders:**
-- Levels
-- Materials
-- Sounds
-- Generated (modeling assets)
-- Megascans (textures and decals)
-
-**CONGRATULATIONS - BACKROOMS LEVEL ZERO COMPLETE!**
