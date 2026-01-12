@@ -203,6 +203,13 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Adjusting Ceiling Material:**](#adjusting-ceiling-material)
     - [**Adjusting Exposure:**](#adjusting-exposure-1)
   - [**CREATING CARPET MATERIAL**](#creating-carpet-material)
+    - [**Duplicating Base Material:**](#duplicating-base-material)
+    - [**Current State:**](#current-state)
+    - [**Adding Noise Texture:**](#adding-noise-texture)
+    - [**Testing Noise:**](#testing-noise)
+    - [**Applying to Floor:**](#applying-to-floor-1)
+    - [**Adjusting Tile Density:**](#adjusting-tile-density)
+    - [**Adding Yellow Color:**](#adding-yellow-color)
 
 ---
 
@@ -870,7 +877,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ## **CREATING CARPET MATERIAL**
 
-**Duplicating Base Material:**
+### **Duplicating Base Material:**
 - Save project
 - Press Ctrl+Space for content browser
 - Navigate to Materials folder
@@ -880,11 +887,13 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Double-click to open
 - Drag to top of screen
 
-**Current State:**
+![alt text](image-22.png)
+
+### **Current State:**
 - Has solid murky yellow color
 - Want to add weaved wool carpet texture
 
-**Adding Noise Texture:**
+### **Adding Noise Texture:**
 - In content browser, go to **All**
 - Search for "noise"
 - Shows various noise textures
@@ -895,18 +904,20 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Select "Good_64x64_TilingNoise"
 - Drag into material graph
 
-**Testing Noise:**
+### **Testing Noise:**
 - Connect texture RGB to Base Color
 - Save
 - Black and white noise pattern
 
-**Applying to Floor:**
+### **Applying to Floor:**
 - Select Floor in outliner
 - In Details → Materials
 - Change from M_BackroomYellow to **M_BackroomCarpet**
 - Floor shows black/white noise
 
-**Adjusting Tile Density:**
+![alt text](image-23.png)
+
+### **Adjusting Tile Density:**
 - Press **G** to toggle grid/game view
 - In material, click empty space
 - Press **U** + left-click (Texture Coordinate)
@@ -917,13 +928,19 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Change to **20**
 - Save - shows speckled look
 
-**Adding Yellow Color:**
+### **Adding Yellow Color:**
 - Drag from yellow color output
 - Create **Multiply** node
 - Connect noise texture to multiply
 - Connect multiply output to Base Color
 - Save
 - Carpet now has roughness but still yellow
+
+![alt text](image-24.png)
+
+![alt text](image-25.png)
+
+![alt text](image-26.png)
 
 ---
 
