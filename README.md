@@ -188,6 +188,21 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Adding Yellow Tint:**](#adding-yellow-tint)
     - [**Adjusting Exposure:**](#adjusting-exposure)
   - [**CREATING CEILING LIGHTS**](#creating-ceiling-lights)
+    - [**Creating Light Material**](#creating-light-material)
+    - [**New Material:**](#new-material)
+    - [**Setting Up White Emissive:**](#setting-up-white-emissive)
+    - [**Creating Light Cube**](#creating-light-cube)
+    - [**Adding Cube:**](#adding-cube)
+    - [**Positioning Cube:**](#positioning-cube)
+    - [**Centering Cube:**](#centering-cube)
+    - [**Renaming:**](#renaming)
+    - [**Distributing Lights**](#distributing-lights)
+    - [**Setting Up Views:**](#setting-up-views)
+    - [**Creating Light Grid:**](#creating-light-grid)
+    - [**Organizing:**](#organizing)
+    - [**Adjusting Ceiling Material:**](#adjusting-ceiling-material)
+    - [**Adjusting Exposure:**](#adjusting-exposure-1)
+  - [**CREATING CARPET MATERIAL**](#creating-carpet-material)
 
 ---
 
@@ -744,6 +759,8 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Creates darker, tinted grid
 - Save
 
+![alt text](image-19.png)
+
 ### **Adjusting Exposure:**
 - Lighting may be too dark now
 - Will adjust after adding ceiling lights
@@ -754,9 +771,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ## **CREATING CEILING LIGHTS**
 
-**Creating Light Material**
+### **Creating Light Material**
 
-**New Material:**
+### **New Material:**
 - Press Ctrl+Space for content browser
 - Go to Materials folder
 - Right-click → New Material
@@ -764,7 +781,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Double-click to open
 - Drag to top of screen
 
-**Setting Up White Emissive:**
+### **Setting Up White Emissive:**
 - Click empty space
 - Press **3** + left-click (color node)
 - Default is black - double-click
@@ -772,9 +789,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Connect to **Emissive Color**
 - Save material
 
-**Creating Light Cube**
+### **Creating Light Cube**
 
-**Adding Cube:**
+### **Adding Cube:**
 - Go to Add menu → **Shapes**
 - Drag **Cube** into scene
 - Position half in ceiling
@@ -784,30 +801,32 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Select "M_CeilingLight"
   - Cube lights up
 
-**Positioning Cube:**
+### **Positioning Cube:**
 - Change snapping to **10** for fine control
 - Drag cube on blue (Z) axis
 - Move up into ceiling
 - Drag down one snap (10cm sticking out)
 
-**Centering Cube:**
+### **Centering Cube:**
 - In Details → Transform → Location
 - Set X and Y to **0**
 - Centers cube in room
 
-**Renaming:**
+### **Renaming:**
 - Select cube in outliner
 - Press F2
 - Rename: "CeilingLight"
 
-**Distributing Lights**
+![alt text](image-20.png)
 
-**Setting Up Views:**
+### **Distributing Lights**
+
+### **Setting Up Views:**
 - Click top right for two-panel view
 - Set left panel to **Top** view
 - Cube shows in center of room
 
-**Creating Light Grid:**
+### **Creating Light Grid:**
 - Change snapping to **100** (1 meter)
 - Select ceiling light
 - Hold **Alt** + drag to duplicate
@@ -818,14 +837,14 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Repeat for top row
 - Creates grid of 49 lights (7x7)
 
-**Organizing:**
+### **Organizing:**
 - In outliner, select first CeilingLight
 - Shift+select last CeilingLight
 - Right-click → Move to Create New Folder
 - Name: "CeilingLights"
 - Collapse folder
 
-**Adjusting Ceiling Material:**
+### **Adjusting Ceiling Material:**
 - Click restore viewport (single view)
 - Scene appears underexposed
 - Open "M_BackroomCeiling" material
@@ -835,7 +854,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Save
 - Room now completely dark except cube lights
 
-**Adjusting Exposure:**
+### **Adjusting Exposure:**
 - Select Post Process Volume in outliner
 - Go to Exposure settings
 - Change Exposure Compensation from 10 to **20**
@@ -845,9 +864,11 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Try **12.5** or **13**
 - Adjust as needed for desired look
 
+![alt text](image-21.png)
+
 ---
 
-**CREATING CARPET MATERIAL**
+## **CREATING CARPET MATERIAL**
 
 **Duplicating Base Material:**
 - Save project
