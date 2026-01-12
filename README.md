@@ -122,6 +122,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Viewport Navigation Controls**](#viewport-navigation-controls)
     - [**Setting Floor Size**](#setting-floor-size)
     - [**Saving the Level**](#saving-the-level)
+  - [**UE HEAVY USEAGE FIX**](#ue-heavy-useage-fix)
+  - [**CREATING EXTERIOR WALLS**](#creating-exterior-walls)
+    - [**Using Modeling Tools**](#using-modeling-tools)
+    - [**Creating First Wall**](#creating-first-wall)
+    - [**Naming the Wall**](#naming-the-wall)
+    - [**Creating Remaining Three Walls**](#creating-remaining-three-walls)
+    - [**Setting Up Snapping**](#setting-up-snapping)
+    - [**Duplicating Walls**](#duplicating-walls)
+    - [**Organizing Walls**](#organizing-walls)
 
 ---
 
@@ -171,11 +180,51 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Name level: "BackroomsLevel0" (no spaces allowed)
 - Click Save
 
+![alt text](image.png)
+
 ---
 
-**CREATING EXTERIOR WALLS**
 
-**Using Modeling Tools**
+## **UE HEAVY USEAGE FIX**
+
+* Open your Unreal Engine project
+* In **Outliner**, select **VolumetricCloud**
+* Press **Delete**
+
+---
+
+* In **Outliner**, select **SkyAtmosphere**
+* Press **Delete**
+
+---
+
+* In the viewport (top-right):
+
+  * Click **Lit**
+  * Select **Unlit**
+
+---
+
+* Go to **Edit → Project Settings → Rendering**
+* Set **Global Illumination Method** → `None`
+* Set **Reflection Method** → `Screen Space`
+* Restart Unreal Engine
+
+---
+
+* Go to **Edit → Project Settings → Rendering**
+* Set **Shadow Map Method** → `Shadow Maps`
+
+---
+
+* Save project
+* Restart Unreal Engine
+
+---
+
+## **CREATING EXTERIOR WALLS**
+
+### **Using Modeling Tools**
 - Click "Select Mode" at top → Choose **Modeling** mode
 - Go to bottom gear icon → Settings:
   - Change Asset Generation Location to **Global Asset Path**
@@ -183,7 +232,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - This saves all created items to "generated" folder at project top level
 - Close settings
 
-**Creating First Wall**
+### **Creating First Wall**
 - Click **Box** shape tool
 - Set dimensions:
   - **Width**: 4000 cm (40 meters - matches floor)
@@ -198,7 +247,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Press **F** to zoom in and check alignment
 - Use arrows to adjust position if needed
 
-**Naming the Wall**
+### **Naming the Wall**
 - Select wall in outliner
 - Press **F2** to rename
 - Name: "OutsideWall"
@@ -207,7 +256,9 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Find wall, press F2, rename to "OutsideWall"
 - Press Ctrl+Space again to close content browser
 
-**Creating Remaining Three Walls**
+![alt text](image-1.png)
+
+### **Creating Remaining Three Walls**
 - Exit Modeling mode: Click Select at top
 - Set up dual viewport:
   - Click three-line menu (burger menu) on viewport
@@ -217,13 +268,16 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Use scroll wheel to zoom in/out
   - Right mouse button to pan
 
-**Setting Up Snapping**
-- At top toolbar, enable snapping checkboxes
+### **Setting Up Snapping**
+- At top toolbar, enable snapping(magnet icon) checkboxes
 - Set snap value to **100 centimeters (1 meter)**
 
-**Duplicating Walls**
+### **Duplicating Walls**
 - Select first wall
 - Hold **Alt** key + drag wall to opposite side (creates duplicate)
+
+![alt text](image-2.png)
+
 - Duplicate again into middle of room
 - Press **E** key to rotate (changes to rotation tool)
 - Rotate 90 degrees (snaps to 10-degree increments)
@@ -231,12 +285,14 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Move rotated wall to one side
 - Hold Alt + drag to create fourth wall on opposite side
 
-**Organizing Walls**
+### **Organizing Walls**
 - In outliner, click first wall
 - Shift+click last wall to select all
 - Right-click → Move to Create New Folder
 - Name folder: "OutsideWalls"
 - Collapse folder
+
+![alt text](image-3.png)
 
 ---
 
