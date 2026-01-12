@@ -148,6 +148,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Creating Wall Segment**](#creating-wall-segment)
     - [**Creating Baseboard**](#creating-baseboard)
     - [**Positioning Baseboard**](#positioning-baseboard)
+    - [**Merging Wall and Baseboard**](#merging-wall-and-baseboard)
+    - [**Laying Out Internal Walls**](#laying-out-internal-walls)
+    - [**Setting Up Dual View:**](#setting-up-dual-view)
+    - [**Creating L-Shape Segment:**](#creating-l-shape-segment)
+    - [**Creating Group of Four:**](#creating-group-of-four)
+    - [**Duplicating Groups:**](#duplicating-groups)
+    - [**Set Traps \& Shortcuts**](#set-traps--shortcuts)
+    - [**Organizing Internal Walls:**](#organizing-internal-walls)
+    - [**Testing:**](#testing)
 
 ---
 
@@ -410,7 +419,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Drag to align with wall bottom
 - Should see 2.5cm overhang on each side
 
-**Merging Wall and Baseboard**
+### **Merging Wall and Baseboard**
 - Select Box (main wall)
 - Shift+select Box2 (baseboard)
 - Go to Tools → **Merge Actors**
@@ -423,15 +432,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Click Save
 - Close dialog box
 
-**Laying Out Internal Walls**
+### **Laying Out Internal Walls**
 
-**Setting Up Dual View:**
+### **Setting Up Dual View:**
 - Click top right for two-panel view
 - Left: Top wireframe view
 - Right: Perspective view
 - Zoom in on wall segment
 
-**Creating L-Shape Segment:**
+### **Creating L-Shape Segment:**
 - Select wall segment
 - Press **W** for move tool
 - Hold **Alt** + drag to duplicate
@@ -441,7 +450,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Check perspective view for alignment
 - Select both segments, press **Ctrl+G** to group
 
-**Creating Group of Four:**
+### **Creating Group of Four:**
 - Change snapping back to 100 (1 meter)
 - Select L-shaped group
 - Hold Alt + duplicate multiple times
@@ -452,7 +461,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Others: Rotate as desired for maze layout
 - Select all four, press **Ctrl+G** to group
 
-**Duplicating Groups:**
+### **Duplicating Groups:**
 - Position first group roughly in center
 - Hold Alt + drag to create more groups
 - Create full row of wall groups
@@ -461,7 +470,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Hold Alt + duplicate row to bottom
 - Creates full maze layout
 
-**Organizing Internal Walls:**
+### **Set Traps & Shortcuts**
+- Randomize Patterns
+- Set Wall Stuck Traps
+- Set Shortcuts
+- Some Areas Suffocated
+- Some Areas Wide
+- Some Seem Similar But have Traps
+
+### **Organizing Internal Walls:**
 - Click restore viewport (top right)
 - Zoom out to see full maze
 - In outliner, select all internal wall segments
@@ -469,11 +486,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Name: "InternalWalls"
 - Collapse folder
 
-**Testing:**
+### **Testing:**
 - Save project
 - Click Play to test
 - Navigate through maze
 - Press Escape to exit
+
+![alt text](image-7.png)
+
+![alt text](image-6.png)
 
 ---
 
