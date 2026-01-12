@@ -166,6 +166,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Applying to Exterior Walls:**](#applying-to-exterior-walls)
     - [**Applying to Internal Walls:**](#applying-to-internal-walls)
     - [**Testing:**](#testing-1)
+    - [**CREATING CEILING AND LIGHTING**](#creating-ceiling-and-lighting)
 
 ---
 
@@ -576,7 +577,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ---
 
-**CREATING CEILING AND LIGHTING**
+### **CREATING CEILING AND LIGHTING**
 
 ![alt text](image-10.png)
 
