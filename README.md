@@ -166,7 +166,28 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Applying to Exterior Walls:**](#applying-to-exterior-walls)
     - [**Applying to Internal Walls:**](#applying-to-internal-walls)
     - [**Testing:**](#testing-1)
-    - [**CREATING CEILING AND LIGHTING**](#creating-ceiling-and-lighting)
+  - [**CREATING CEILING AND LIGHTING**](#creating-ceiling-and-lighting)
+    - [**Creating Ceiling**](#creating-ceiling)
+    - [**Setting Up View:**](#setting-up-view)
+    - [**Duplicating Floor to Ceiling:**](#duplicating-floor-to-ceiling)
+    - [**Removing External Lighting:**](#removing-external-lighting)
+    - [**Creating Luminous Ceiling Material**](#creating-luminous-ceiling-material)
+    - [**Duplicating Material:**](#duplicating-material)
+    - [**Making Emissive:**](#making-emissive)
+    - [**Applying Ceiling Material:**](#applying-ceiling-material)
+    - [**Setting Up Exposure Control**](#setting-up-exposure-control)
+    - [**Adding Post Process Volume:**](#adding-post-process-volume)
+    - [**Configuring Volume:**](#configuring-volume)
+    - [**Setting Manual Exposure:**](#setting-manual-exposure)
+    - [**Adding Grid Texture to Ceiling**](#adding-grid-texture-to-ceiling)
+    - [**Using Quixel Bridge:**](#using-quixel-bridge)
+    - [**Applying Texture:**](#applying-texture)
+    - [**Basic Texture Application:**](#basic-texture-application)
+    - [**Adjusting Tile Scale:**](#adjusting-tile-scale)
+    - [**Further Scaling:**](#further-scaling)
+    - [**Adding Yellow Tint:**](#adding-yellow-tint)
+    - [**Adjusting Exposure:**](#adjusting-exposure)
+  - [**CREATING CEILING LIGHTS**](#creating-ceiling-lights)
 
 ---
 
@@ -577,18 +598,18 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ---
 
-### **CREATING CEILING AND LIGHTING**
+## **CREATING CEILING AND LIGHTING**
 
 ![alt text](image-10.png)
 
-**Creating Ceiling**
+### **Creating Ceiling**
 
-**Setting Up View:**
+### **Setting Up View:**
 - Click maximize/restore viewport for two-panel view
 - Set left panel to **Left** view (side view)
 - Keep right panel as perspective
 
-**Duplicating Floor to Ceiling:**
+### **Duplicating Floor to Ceiling:**
 - Select Floor (in outliner, perspective view, or side view)
 - Set grid snap value to **100** (1 meter)
 - Hold **Alt** + drag floor up to ceiling height
@@ -597,16 +618,18 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - In outliner, select "Floor2"
 - Press F2, rename to "Ceiling"
 
-**Removing External Lighting:**
+![alt text](image-11.png)
+
+### **Removing External Lighting:**
 - In outliner, open Lighting folder
 - Select DirectionalLight
 - Shift+select down to VolumetricCloud (all items)
 - Delete
 - Scene goes completely black
 
-**Creating Luminous Ceiling Material**
+### **Creating Luminous Ceiling Material**
 
-**Duplicating Material:**
+### **Duplicating Material:**
 - Press Ctrl+Space for content browser
 - Navigate to Materials folder
 - Select "M_BackroomYellow"
@@ -614,7 +637,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Rename: "M_BackroomCeiling"
 - Double-click to open
 
-**Making Emissive:**
+### **Making Emissive:**
 - Select yellow color node
 - Change **Value** from 0.05 to **1** (full brightness)
 - Delete specular connection (not needed for emissive)
@@ -623,29 +646,35 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Preview shows glowing yellow sphere
 - Click **Save**
 
-**Applying Ceiling Material:**
+![alt text](image-12.png)
+
+### **Applying Ceiling Material:**
 - Go back to main level
 - Select Ceiling
 - In Details → Materials
 - Change from M_BackroomYellow to **M_BackroomCeiling**
 - Ceiling glows and casts light on walls
 
-**Setting Up Exposure Control**
+![alt text](image-13.png)
 
-**Adding Post Process Volume:**
+### **Setting Up Exposure Control**
+
+### **Adding Post Process Volume:**
 - Click **Add** menu
 - Go to **Volumes**
 - Drag **Post Process Volume** into scene (anywhere)
 - Appears in outliner
 
-**Configuring Volume:**
+### **Configuring Volume:**
 - Select Post Process Volume
 - In Details, search for "unbound"
 - Check **Infinite Extent (Unbound)**
 - This applies settings to entire room
 - Press **X** to clear search and see all details
 
-**Setting Manual Exposure:**
+![alt text](image-14.png)
+
+### **Setting Manual Exposure:**
 - Find **Exposure** section
 - Check both:
   - **Metering Mode**: Change from Auto to **Manual**
@@ -654,9 +683,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Creates consistent, gloomy lighting
 - No auto-adjustment when entering play mode
 
-**Adding Grid Texture to Ceiling**
+![alt text](image-16.png)
 
-**Using Quixel Bridge:**
+![alt text](image-15.png)
+
+### **Adding Grid Texture to Ceiling**
+
+![alt text](image-17.png)
+
+### **Using Quixel Bridge:**
 - Go to Add menu → **Quixel Bridge**
 - Must sign in with Epic Games account
 - Search for: "square floor tiles"
@@ -667,20 +702,20 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Creates folder: "MegaScan_Surfaces_SquareFloorTiles"
 - Contains texture files and material
 
-**Applying Texture:**
+### **Applying Texture:**
 - Close Bridge
 - Open "M_BackroomCeiling" material
 - From content browser, drag "SquareFloorTiles" texture ending in "_D" (diffuse/color)
 - Place in material graph
 - Close content browser window
 
-**Basic Texture Application:**
+### **Basic Texture Application:**
 - Take **RGB** output from texture
 - Plug into **Emissive Color**
 - Save
 - Check level - ceiling now has tiled pattern
 
-**Adjusting Tile Scale:**
+### **Adjusting Tile Scale:**
 - In material, click empty space
 - Press **U** + left-click (creates Texture Coordinate)
 - Drag from Texture Coordinate output
@@ -691,12 +726,12 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Doubles tile density (4x4 becomes 8x8)
 - Save and check level
 
-**Further Scaling:**
+### **Further Scaling:**
 - Change multiply value to **10**
 - Save
 - Creates denser tiling pattern in level
 
-**Adding Yellow Tint:**
+### **Adding Yellow Tint:**
 - Take one channel from texture (example: **Red** channel)
 - Drag out, type "multiply" or press asterisk
 - Connect to multiply node
@@ -709,13 +744,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Creates darker, tinted grid
 - Save
 
-**Adjusting Exposure:**
+### **Adjusting Exposure:**
 - Lighting may be too dark now
 - Will adjust after adding ceiling lights
 
+![alt text](image-18.png)
+
 ---
 
-**CREATING CEILING LIGHTS**
+## **CREATING CEILING LIGHTS**
 
 **Creating Light Material**
 
