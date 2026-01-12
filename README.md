@@ -143,6 +143,11 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Changing Walk Speed:**](#changing-walk-speed)
     - [**Adjusting Camera Height:**](#adjusting-camera-height)
     - [**Finalizing:**](#finalizing)
+  - [**CREATING INTERNAL WALLS**](#creating-internal-walls)
+    - [**Save Progress**](#save-progress)
+    - [**Creating Wall Segment**](#creating-wall-segment)
+    - [**Creating Baseboard**](#creating-baseboard)
+    - [**Positioning Baseboard**](#positioning-baseboard)
 
 ---
 
@@ -371,12 +376,12 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ---
 
-**CREATING INTERNAL WALLS**
+## **CREATING INTERNAL WALLS**
 
-**Save Progress**
+### **Save Progress**
 - Click Save or press Ctrl+S
 
-**Creating Wall Segment**
+### **Creating Wall Segment**
 - Go to Select Mode → **Modeling**
 - Use **Box** tool
 - Set dimensions:
@@ -388,7 +393,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Click **Complete**
 - Press **F** to zoom in
 
-**Creating Baseboard**
+### **Creating Baseboard**
 - Use Box tool again
 - Dimensions:
   - **Height**: 20 cm
@@ -398,7 +403,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Place in front of wall (don't worry about exact position)
 - Click **Complete**
 
-**Positioning Baseboard**
+### **Positioning Baseboard**
 - Exit Modeling mode → Click Select
 - Change position snapping from 100 to **10**
 - Select Box2 (baseboard)
