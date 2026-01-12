@@ -157,6 +157,15 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Set Traps \& Shortcuts**](#set-traps--shortcuts)
     - [**Organizing Internal Walls:**](#organizing-internal-walls)
     - [**Testing:**](#testing)
+  - [**CREATING MATERIALS**](#creating-materials)
+    - [**Basic Yellow Material**](#basic-yellow-material)
+    - [**Creating Material:**](#creating-material)
+    - [**Setting Up Yellow Color:**](#setting-up-yellow-color)
+    - [**Removing Shininess:**](#removing-shininess)
+    - [**Applying to Floor:**](#applying-to-floor)
+    - [**Applying to Exterior Walls:**](#applying-to-exterior-walls)
+    - [**Applying to Internal Walls:**](#applying-to-internal-walls)
+    - [**Testing:**](#testing-1)
 
 ---
 
@@ -498,11 +507,11 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 ---
 
-**CREATING MATERIALS**
+## **CREATING MATERIALS**
 
-**Basic Yellow Material**
+### **Basic Yellow Material**
 
-**Creating Material:**
+### **Creating Material:**
 - Press Ctrl+Space for content browser
 - Go to top level
 - Right-click → Create New Folder: "Materials"
@@ -512,7 +521,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Double-click to open
 - Drag to top of screen to dock
 
-**Setting Up Yellow Color:**
+### **Setting Up Yellow Color:**
 - Left-click empty space in material graph
 - Press **3** key + left-click (creates color node)
 - Default is black - double-click to open
@@ -527,14 +536,16 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Click OK
 - Connect color output to **Base Color** input
 
-**Removing Shininess:**
+### **Removing Shininess:**
 - Press **1** key + left-click (creates scalar value)
 - Default value is 0 (what we want)
 - Connect to **Specular** input
 - Preview now shows matte yellow finish
 - Click **Save**
 
-**Applying to Floor:**
+![alt text](image-8.png)
+
+### **Applying to Floor:**
 - Collapse folders in outliner
 - Select Floor
 - In Details → Materials section
@@ -543,27 +554,31 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Select "M_BackroomYellow"
 - Floor changes to murky yellow
 
-**Applying to Exterior Walls:**
+### **Applying to Exterior Walls:**
 - Open OutsideWalls folder
 - Select first wall
 - Shift+click last wall (all selected)
 - In Details → Materials
 - Change blue material to "M_BackroomYellow"
 
-**Applying to Internal Walls:**
+### **Applying to Internal Walls:**
 - Open InternalWalls folder
 - Select all groups (first, shift+middle, shift+last)
 - Press **Shift+G** to ungroup (or right-click → Group → Ungroup)
 - With all selected, change both materials to "M_BackroomYellow"
 
-**Testing:**
+### **Testing:**
 - Click Play
 - Everything now murky yellow
 - Press Escape to exit
 
+![alt text](image-9.png)
+
 ---
 
 **CREATING CEILING AND LIGHTING**
+
+![alt text](image-10.png)
 
 **Creating Ceiling**
 
