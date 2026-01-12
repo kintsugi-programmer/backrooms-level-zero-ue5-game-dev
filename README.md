@@ -99,7 +99,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 
 # Development Documentation
 
-# Table of Contents
+## Table of Contents
 - [backrooms-level-zero-ue5-game-dev](#backrooms-level-zero-ue5-game-dev)
   - [**Project Description – Backrooms Level Zero (Unreal Engine 5)**](#project-description--backrooms-level-zero-unreal-engine-5)
     - [**Core Concept**](#core-concept)
@@ -115,13 +115,19 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
     - [**Controls**](#controls)
     - [**Target Audience**](#target-audience)
 - [Development Documentation](#development-documentation)
-- [Table of Contents](#table-of-contents)
+  - [Table of Contents](#table-of-contents)
+  - [**PROJECT SETUP**](#project-setup)
+    - [**Creating New Project**](#creating-new-project)
+    - [**Creating New Level**](#creating-new-level)
+    - [**Viewport Navigation Controls**](#viewport-navigation-controls)
+    - [**Setting Floor Size**](#setting-floor-size)
+    - [**Saving the Level**](#saving-the-level)
 
 ---
 
-**PROJECT SETUP**
+## **PROJECT SETUP**
 
-**Creating New Project**
+### **Creating New Project**
 - Launch Unreal Engine 5 editor
 - Select **Game** section
 - Choose **First Person** template
@@ -129,18 +135,18 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - Desktop maximum quality
   - No starter content
   - No ray tracing
-- Name the project (example: "BackroomsTutorial")
+- Name the project (example: "BackroomsLevelZero ")(no underscore)
 - Click Create
 - Click Dismiss on plugins dialog
 - Click Update on project files out of date notification
 
-**Creating New Level**
+### **Creating New Level**
 - Go to File menu → New Level
 - Choose **Basic Level** template
 - Click Create
 - This provides sky, atmosphere (temporary for lighting), and floor
 
-**Viewport Navigation Controls**
+### **Viewport Navigation Controls**
 - Hold right mouse button and use:
   - **W** - Move forward
   - **S** - Move backward
@@ -149,7 +155,7 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
   - **Q** - Move down
   - **E** - Move up
 
-**Setting Floor Size**
+### **Setting Floor Size**
 - Select floor in viewport (also shows in outliner panel)
 - Check Details panel for scale
 - Default scale: 8x8 (each unit = 10 meters)
@@ -157,12 +163,12 @@ The player is placed inside a vast, enclosed maze of yellow wallpapered rooms wi
 - Change to **4** for 40 square meter room (4x4 scale)
 - Press **F** to focus/frame selected element in viewport
 
-**Saving the Level**
+### **Saving the Level**
 - Click Save button (top shows "untitled" with asterisk)
 - Right-click in project folder → Create New Folder
 - Name folder: "levels"
 - Double-click into folder
-- Name level: "BackroomsLevelZero" (no spaces allowed)
+- Name level: "BackroomsLevel0" (no spaces allowed)
 - Click Save
 
 ---
