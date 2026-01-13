@@ -222,6 +222,7 @@
     - [**Implementing in Scene**](#implementing-in-scene)
     - [**Testing and Customization**](#testing-and-customization)
     - [**Gameplay Testing**](#gameplay-testing)
+  - [**FIX WALL COLLISION**](#fix-wall-collision)
   - [**PACKAGING THE GAME**](#packaging-the-game)
 
 ---
@@ -1758,6 +1759,32 @@ When hitting play, the body cam system displays the fisheye lens effect, creatin
 ![alt text](ScreenShots/image-58.png)
 ![alt text](ScreenShots/image-59.png)
 ![alt text](ScreenShots/image-57.png)
+
+---
+
+## **FIX WALL COLLISION**
+
+* Select a wall in the level
+* Right-click → **Browse to Asset**
+* Double-click the wall mesh (opens Static Mesh Editor)
+* Top menu → **Collision**
+* Click **Show Collision**
+* If you see NO green lines → collision is missing
+* Click **Collision → Add Box Simplified Collision**
+  * (or **Add Convex Collision**)
+* Make sure green collision appears
+* **Save** the mesh
+* Go back to level
+* Press **Play**
+* Player should now **stop at walls**
+* In viewport press **Alt + C**
+* Green outlines = collision working
+* `BlockAll` alone is NOT enough
+* Mesh MUST have collision geometry
+
+![alt text](ScreenShots/image-65.png)
+![alt text](ScreenShots/image-66.png)
+![alt text](ScreenShots/image-67.png)
 
 ---
 
