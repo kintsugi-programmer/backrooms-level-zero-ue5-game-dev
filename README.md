@@ -1789,6 +1789,7 @@ When hitting play, the body cam system displays the fisheye lens effect, creatin
 ---
 
 ## **PACKAGING THE GAME**
+- For Windows, Install VS Build Tools and Whole C++ Dev tools. else face error hell
 
 **Adding Quit Function**
 
