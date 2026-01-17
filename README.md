@@ -5,11 +5,11 @@
 
 📥 Download Game the Playable Build for Windows:
 
-[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?logo=github)](https://github.com/kintsugi-programmer/backrooms-level-zero-ue5-game-dev/releases/download/v0.1.0-alpha/BackroomsLevelZeroV0-Windows.zip)
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?logo=github)](https://github.com/kintsugi-programmer/backrooms-level-zero-ue5-game-dev/releases/download/v0.1.0-alpha/KintsugiStack.BackroomsLevelZeroV0.zip)
 
 
-🔗 **Direct Download:**  
-➡️ https://github.com/kintsugi-programmer/backrooms-level-zero-ue5-game-dev/releases/download/v0.1.0-alpha/BackroomsLevelZeroV0-Windows.zip
+🔗 **Release:**  
+https://github.com/kintsugi-programmer/backrooms-level-zero-ue5-game-dev/releases/tag/v0.1.0-alpha
 
 Gameplay: https://youtu.be/n3Wn4CKqnIQ
 
