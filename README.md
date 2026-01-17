@@ -1,6 +1,34 @@
 # backrooms-level-zero-ue5-game-dev
 
-**Backrooms Level Zero** is a short, atmospheric first-person exploration experience built in **Unreal Engine 5**, inspired by the iconic liminal space known as *The Backrooms*. The project focuses on environmental storytelling, mood, and immersion rather than traditional gameplay mechanics, recreating the unsettling feeling of endless, monotonous corridors.
+> ⚡ Plug & Play Edition — Just unzip and play!
+
+
+📥 Download Game the Playable Build for Windows:
+
+[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?logo=github)](https://github.com/kintsugi-programmer/backrooms-level-zero-ue5-game-dev/releases/download/v0.1.0-alpha/BackroomsLevelZeroV0-Windows.zip)
+
+
+🔗 **Direct Download:**  
+➡️ https://github.com/kintsugi-programmer/backrooms-level-zero-ue5-game-dev/releases/download/v0.1.0-alpha/BackroomsLevelZeroV0-Windows.zip
+
+Gameplay: https://youtu.be/n3Wn4CKqnIQ
+
+> **Backrooms Level Zero** is a short, atmospheric first-person exploration experience built in **Unreal Engine 5**, inspired by the iconic liminal space known as *The Backrooms*. The project focuses on environmental storytelling, mood, and immersion rather than traditional gameplay mechanics, recreating the unsettling feeling of endless, monotonous corridors.
+
+![alt text](ScreenShots/LinkedInBackrooms.gif)
+
+- Author: [Kintsugi-Programmer](https://github.com/kintsugi-programmer)
+
+> Disclaimer: The content presented here is a curated blend of my personal learning journey, experiences, open-source documentation, and invaluable knowledge gained from diverse sources. I do not claim sole ownership over all the material; this is a community-driven effort to learn, share, and grow together.
+
+
+**Controls**
+
+| Action | Keyboard | Controller |
+|------|----------|------------|
+| Move | WASD | Left Joystick |
+| Look around | Mouse | Right Joystick |
+| Quit game | Q / Escape | Start / Menu (Special Right) |
 
 - ✓ 40x40 meter room with 4-meter walls
 - ✓ First person character with adjusted speed and camera
@@ -27,9 +55,41 @@
 - Generated (modeling assets)
 - Megascans (textures and decals)
 
+
 ---
 
-# Development Documentation
+MIT License
+
+Copyright (c) 2026 Siddhant Bali
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+---
+
+# Game Design & Development Documentation
+
+![alt text](ScreenShots/unnamed.png)
+
+| | | |
+|-|-|-|
+| ![alt text](<ScreenShots/Gameplay Shot (2).jpeg>) | ![alt text](<ScreenShots/Gameplay Shot (3).jpeg>) | ![alt text](<ScreenShots/Gameplay Shot (1).jpeg>) |
 
 ## Table of Contents
 - [backrooms-level-zero-ue5-game-dev](#backrooms-level-zero-ue5-game-dev)
@@ -232,6 +292,8 @@
 ---
 
 ### **Core Concept**
+
+![alt text](ScreenShots/Header.png)
 
 The player is placed inside a vast, enclosed maze of yellow wallpapered rooms with humming fluorescent lights, worn carpet, and subtle environmental details. There are no objectives, enemies, or HUD elements—only the act of wandering, listening, and absorbing the oppressive atmosphere. The experience is designed to evoke unease through repetition, isolation, and sensory distortion.
 
@@ -1891,6 +1953,7 @@ When hitting play, the body cam system displays the fisheye lens effect, creatin
 - Click "Select Folder"
 
 ![alt text](ScreenShots/image-64.png)
+![alt text](ScreenShots/image-69.png)
 
 **Build Process:**
 - Shows "Packaging Project for Windows" message
@@ -1923,34 +1986,7 @@ When hitting play, the body cam system displays the fisheye lens effect, creatin
 
 ---
 
-**ADDITIONAL CUSTOMIZATION OPTIONS**
-
-**Extending the Project:**
-- Can build on this foundation
-- Add more levels
-- Modify materials further
-- Add more audio triggers
-- Create additional post-processing effects
-- Experiment with lighting
-
-**Other Backrooms Levels:**
-- Tutorial focused on Level Zero
-- Can create other backroom levels using same techniques
-- Modify materials and layout for different levels
-
-**Tips for Further Development:**
-- Save frequently (Ctrl+S)
-- Test in play mode regularly
-- Keep outliner organized with folders
-- Name assets clearly
-- Adjust exposure after lighting changes
-- Use post-processing effects sparingly for best performance
-
-**Performance Optimization:**
-- Use medium quality textures for better performance
-- Limit number of lights if needed
-- Test on target hardware
-- Shipping build is optimized automatically
+![alt text](ScreenShots/image-68.png)
 
 ---
 
@@ -1987,4 +2023,8 @@ When hitting play, the body cam system displays the fisheye lens effect, creatin
 - Asterisk (*): Create multiply node
 
 ---
+End-of-File
 
+The [KintsugiStack](https://github.com/kintsugi-programmer/KintsugiStack) repository, authored by Kintsugi-Programmer, is less a comprehensive resource and more an Artifact of Continuous Research and Deep Inquiry into Computer Science and Software Engineering. It serves as a transparent ledger of the author's relentless pursuit of mastery, from the foundational algorithms to modern full-stack implementation.
+
+> Made with 💚 [Kintsugi-Programmer](https://github.com/kintsugi-programmer)
